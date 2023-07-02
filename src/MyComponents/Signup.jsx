@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import {Link, useNavigate } from 'react-router-dom';
 
 const Signup = () => {
   const mystyle={
-    width: '400px',
-    height: '60vh'
+    backgroundColor: 'rgb(41, 39, 39)',
+    width: '50%',
+    height: '60%'
   }
+   
 
   const [credentials, setCredentials] = useState({ name: "", email: "", password: ""})
   let navigate = useNavigate();
@@ -13,10 +15,10 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const url = "http://localhost:5000/api/"
-    const response = await fetch(url, {
+    const response = await fetch(url, { 
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/json', 
         // 'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ0Zjk0NTg0ZTkxNDBlYTRmM2QyMTg0In0sImlhdCI6MTY4MjkzNzAwOH0.PJWBpEzf_uujcsboV63v1EfNwp5DXfxdCCNMVSqTUS4'
       },
       body: JSON.stringify({ name: credentials.name,email: credentials.email, password: credentials.password })
@@ -58,6 +60,8 @@ const Signup = () => {
         </div> */}
         <button type="submit" className="btn btn-primary">Sign up</button>
       </form>
+<Link to='/login' style={{textDecoration:"none", color:"blueviolet"}}>Already have an account?</Link>
+
     </div>
   )
 }

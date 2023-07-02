@@ -1,10 +1,11 @@
 import {React, useState} from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Login = () => {
   const mystyle={
-    width: '400px',
-    height: '60vh'
+    backgroundColor: 'rgb(41, 39, 39)',
+    width: '50%',
+    height: '60%'
   }
    
     const[credentials, setCredentials] = useState({email: "", password:""})
@@ -38,7 +39,7 @@ const Login = () => {
         setCredentials({...credentials, [e.target.name]: e.target.value})
      }
   return (
-    <div className='container' style={mystyle}>
+    <div className='container' style={mystyle} >
      <form  onSubmit={handleSubmit}>
   <div className="mb-3 my-5 text-white ">
     <label htmlFor="email" className="form-label">Email address</label>
@@ -51,6 +52,8 @@ const Login = () => {
   </div>
   <button type="submit" className="btn btn-success" >Login</button>
 </form>
+<Link to='/signup' style={{textDecoration:"none", color:"blueviolet"}}>Don't have an account?</Link>
+
     </div>
   )
 }

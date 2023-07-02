@@ -91,7 +91,7 @@ router.post('/login', encoder, async(req, res)=>{
        res.status(500).send("problem")
     }
 })
-
+ 
 
 // i'll create a fetchuser named middleware which will basically fetch the details of
 // the user that tried to logged in and i can use this middleware whereever i want to use it.

@@ -18,9 +18,9 @@ const Home = () => {
   
   return (
     <>
-    <div className="container text-white my-3">
+    <div className="container text-white my-3" style={{backgroundColor:"rgb(41, 39, 39)"}}>
       <h2>Add Notes</h2>
-   <form>
+   <form >
   <div className="mb-3">
     <label htmlFor="title" className="form-label ">Title</label>
     <input type="text" className="form-control" id="title" name='title' aria-describedby="emailHelp" onChange={onChangeit}/>
